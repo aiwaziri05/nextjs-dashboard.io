@@ -39,6 +39,7 @@ export async function updateInvoice(id: string, formData: FormData) {
       `;
   } catch (error) {
     console.error(error);
+    throw new Error('Failed to update invoice.');
   }
 
   revalidatePath('/dashboard/invoices');
@@ -62,6 +63,7 @@ export async function createInvoice(formData: FormData) {
     `;
   } catch (error) {
     console.error(error);
+    throw new Error('Failed to create invoice.');
   }
 
   revalidatePath('/dashboard/invoices');
